@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alex Styles | Stylist &amp; Visual Designer</title>
+  <meta name="description" content="Portfolio of Alex Styles: wardrobe styling, lookbooks and brand identity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Karla:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#work">Skip to projects</a>
+
+  <header class="site-header">
+    <a class="logo" href="#top">Alex Styles</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1>Clothes, color and the story they tell.</h1>
+      <p>I'm Alex, a stylist and visual designer. I build wardrobes, lookbooks and brand identities that feel like the person wearing them.</p>
+      <a class="btn" href="#work">See my work</a>
+    </section>
+
+    <section id="work" class="section">
+      <h2>Selected work</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb t1" role="img" aria-label="Color swatches in rust, olive and sand"></div>
+          <h3>Autumn Capsule Lookbook</h3>
+          <p>A 12-piece capsule wardrobe photographed on location.</p>
+          <button class="btn-link" data-modal="m1">View details</button>
+        </article>
+        <article class="card">
+          <div class="thumb t2" role="img" aria-label="Color swatches in cobalt, lilac and ink"></div>
+          <h3>Fern &amp; Fable Rebrand</h3>
+          <p>Logo, packaging and a social kit for a vintage boutique.</p>
+          <button class="btn-link" data-modal="m2">View details</button>
+        </article>
+        <article class="card">
+          <div class="thumb t3" role="img" aria-label="Color swatches in coral, teal and cream"></div>
+          <h3>The Wardrobe Edit</h3>
+          <p>One-to-one closet audits for busy professionals.</p>
+          <button class="btn-link" data-modal="m3">View details</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <h2>About Alex</h2>
+      <p>I started styling friends for weddings and never stopped. Today I work with individuals and small brands to turn a loose idea into a clear look. I care about fit, color and clothes that get worn more than once.</p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <p class="hint">Hover or tab to a skill to see what I use it for.</p>
+      <ul class="chips">
+        <li><button class="chip" data-tip="Outfit planning and closet audits">Personal styling</button></li>
+        <li><button class="chip" data-tip="Palettes, type and logo systems">Brand identity</button></li>
+        <li><button class="chip" data-tip="Shot lists, props and art direction">Lookbook direction</button></li>
+        <li><button class="chip" data-tip="Figma and Adobe Illustrator">Design tools</button></li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Let's work together</h2>
+      <p>Tell me what you're planning and I'll reply within two days.</p>
+      <a class="btn" href="mailto:hello@alexstyles.example">Email Alex</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 Alex Styles</footer>
+
+  <dialog id="m1"><h3>Autumn Capsule Lookbook</h3><p>Twelve pieces that mix into thirty outfits. Shot over two days in a rust, olive and sand palette. Delivered as a printable PDF and a social set.</p><button class="btn close">Close</button></dialog>
+  <dialog id="m2"><h3>Fern &amp; Fable Rebrand</h3><p>New wordmark, tissue-paper packaging and a six-template social kit. Sales of the shop's online store rose after launch.</p><button class="btn close">Close</button></dialog>
+  <dialog id="m3"><h3>The Wardrobe Edit</h3><p>A two-hour closet audit, a keep/swap/donate list and a shopping plan with a clear budget. Clients leave with outfits they can repeat.</p><button class="btn close">Close</button></dialog>
+
+  <script>
+    document.querySelectorAll('[data-modal]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        document.getElementById(b.dataset.modal).showModal();
+      });
+    });
+    document.querySelectorAll('dialog').forEach(function (d) {
+      d.querySelector('.close').addEventListener('click', function () { d.close(); });
+      d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+    });
+  </script>
+</body>
+</html>
